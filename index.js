@@ -39,6 +39,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(data);
   } else {
+    //instead of reading data from file everytime this route is hit, read it once in the beginning
     res.writeHead(404);
     res.end("Oops.. the page doesn't exist!!!");
   }
